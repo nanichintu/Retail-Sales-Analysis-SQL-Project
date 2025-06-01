@@ -1,8 +1,8 @@
 # SQL Query Practice: Beginner to Master Level
 
-This repository contains a collection of SQL query exercises designed to help you practice and master SQL using a sample `sales_data` table with the following columns:
+This repository contains a collection of SQL query exercises designed to help you practice and master SQL using a sample `Retail` table with the following columns:
 
-### 📊 Table Structure: `sales_data`
+### 📊 Table Structure: `Retail`
 
 ```sql
 customer_id INT,
@@ -27,33 +27,33 @@ name_day VARCHAR(20)
 ### 1. Get all records from the table
 
 ```sql
-SELECT * FROM sales_data;
+SELECT * FROM Retail;
 ```
 
 ### 2. Show unique categories of products
 
 ```sql
-SELECT DISTINCT category FROM sales_data;
+SELECT DISTINCT category FROM Retail;
 ```
 
 ### 3. Count total number of sales transactions
 
 ```sql
-SELECT COUNT(*) AS total_transactions FROM sales_data;
+SELECT COUNT(*) AS total_transactions FROM Retail;
 ```
 
 ### 4. Find total sale amount for each customer
 
 ```sql
 SELECT customer_id, SUM(total_sale) AS total_spent
-FROM sales_data
+FROM Retail
 GROUP BY customer_id;
 ```
 
 ### 5. Show sales made in the month of January
 
 ```sql
-SELECT * FROM sales_data
+SELECT * FROM Retail
 WHERE month = 1;
 ```
 
@@ -65,14 +65,14 @@ WHERE month = 1;
 
 ```sql
 SELECT category, AVG(price_per_unit) AS avg_price
-FROM sales_data
+FROM Retail
 GROUP BY category;
 ```
 
 ### 7. Find the highest sale transaction
 
 ```sql
-SELECT * FROM sales_data
+SELECT * FROM Retail
 ORDER BY total_sale DESC
 LIMIT 1;
 ```
@@ -81,7 +81,7 @@ LIMIT 1;
 
 ```sql
 SELECT gender, SUM(quantity) AS total_quantity
-FROM sales_data
+FROM Retail
 GROUP BY gender;
 ```
 
@@ -89,7 +89,7 @@ GROUP BY gender;
 
 ```sql
 SELECT sale_date, SUM(total_sale) AS daily_sales
-FROM sales_data
+FROM Retail
 GROUP BY sale_date;
 ```
 
@@ -97,7 +97,7 @@ GROUP BY sale_date;
 
 ```sql
 SELECT customer_id, COUNT(DISTINCT month) AS months_active
-FROM sales_data
+FROM Retail
 GROUP BY customer_id
 HAVING COUNT(DISTINCT month) > 1;
 ```
@@ -110,7 +110,7 @@ HAVING COUNT(DISTINCT month) > 1;
 
 ```sql
 SELECT timeofday, SUM(total_sale) AS total_sales
-FROM sales_data
+FROM Retail
 GROUP BY timeofday;
 ```
 
@@ -118,7 +118,7 @@ GROUP BY timeofday;
 
 ```sql
 SELECT customer_id, SUM(total_sale) AS total_spent
-FROM sales_data
+FROM Retail
 GROUP BY customer_id
 ORDER BY total_spent DESC
 LIMIT 3;
@@ -128,7 +128,7 @@ LIMIT 3;
 
 ```sql
 SELECT category, month, SUM(total_sale) AS monthly_sales
-FROM sales_data
+FROM Retail
 GROUP BY category, month
 ORDER BY category, month;
 ```
@@ -137,14 +137,14 @@ ORDER BY category, month;
 
 ```sql
 SELECT category, AVG(age) AS avg_age
-FROM sales_data
+FROM Retail
 GROUP BY category;
 ```
 
 ### 15. Get sales data only for weekends
 
 ```sql
-SELECT * FROM sales_data
+SELECT * FROM Retail
 WHERE name_day IN ('Saturday', 'Sunday');
 ```
 
