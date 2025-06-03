@@ -162,7 +162,16 @@ WHERE sale_date >= CURRENT_DATE - INTERVAL '3 years'
 GROUP BY year_total;
 Note: it will work in postgres
 
----
+### 17.How many orders were placed on each weekday, and which weekday had the highest number of orders
+
+```sql
+SELECT 
+  TO_CHAR(sale_date, 'FMDay') AS week_day,  -- FM removes padding
+  COUNT(id) AS total_orders
+FROM retail
+GROUP BY week_day
+ORDER BY total_orders DESC;
+
 
 ### ✅ Tools
 * Postgres
