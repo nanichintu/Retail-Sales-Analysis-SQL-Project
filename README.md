@@ -195,6 +195,19 @@ GROUP BY week_day
 ORDER BY total_orders DESC;
 ```
 
+### 17.How many orders were placed each month across different years, and which month had the most orders overall??
+
+```sql
+SELECT 
+  TO_CHAR(sale_date, 'Month') AS months,
+  EXTRACT(YEAR FROM sale_date) AS years,
+  COUNT(id) AS total_order
+FROM retail
+GROUP BY years, months
+ORDER BY total_order DESC;
+
+```
+
 ---
 
 ## ✅ Tools Supported
