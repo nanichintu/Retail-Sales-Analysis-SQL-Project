@@ -152,7 +152,14 @@ WHERE name_day IN ('Saturday', 'Sunday');
 ```sql
 SELECT year SUM(total_sale) AS total
 FROM retail
-WHERE sale_date >= CURRENT_DATE - INTERVAL '2 year';
+WHERE sale_date >= CURRENT_DATE - INTERVAL '2 year'; note: it will work only sql server
+         (or)
+SELECT EXTRACT(YEAR FROM sale_date) AS year_total,
+       SUM(total_sale) AS total
+FROM retail
+WHERE sale_date >= CURRENT_DATE - INTERVAL '3 years'
+GROUP BY year_total;  note: it will work in postgres
+
 ---
 
 ### ✅ Tools
