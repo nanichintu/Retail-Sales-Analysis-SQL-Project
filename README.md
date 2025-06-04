@@ -207,15 +207,16 @@ GROUP BY years, months
 ORDER BY total_order DESC;
 
 ```
-### 18.Find how many orders were placed for each product category, showing the sale date adjusted two years back?
+### 18.What is the earliest sale date (after subtracting 2 years) and the total number of orders for each category, grouped by the adjusted date?
 
 ```sql
 SELECT 
     category,
-    DATEADD(year, -2, sale_date) AS one_year_later,
+    MIN(DATEADD(year, -2, sale_date)) AS one_year_later,
     COUNT(id) AS total
 FROM retail_database.dbo.Retail
 GROUP BY category, DATEADD(year, -2, sale_date);
+
 ```
 
 ## ✅ Tools Supported
