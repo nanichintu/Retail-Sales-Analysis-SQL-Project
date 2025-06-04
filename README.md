@@ -218,6 +218,20 @@ FROM retail_database.dbo.Retail
 GROUP BY category, DATEADD(year, -2, sale_date);
 
 ```
+### 18.How many days did it take to deliver each customer's order based on the order date and delivery date?
+
+```sql
+SELECT 
+    c.name, 
+    o.order_date,
+    o.delivery_date,
+    DATEDIFF(day, o.order_date, o.delivery_date) AS duration_days
+FROM 
+    customers AS c
+JOIN 
+    orders AS o ON c.customer_id = o.customer_id;
+
+```
 
 ## ✅ Tools Supported
 
