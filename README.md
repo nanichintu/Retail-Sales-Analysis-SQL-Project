@@ -235,9 +235,8 @@ JOIN
 
 ## ✅ Tools Supported
 
-- PostgreSQL  
-- MySQL  
-- SQL Server (for specific date functions)
+- PostgreSQL   
+- SQL Server 
 
 ---
 
