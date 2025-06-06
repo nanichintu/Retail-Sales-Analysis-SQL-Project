@@ -3,6 +3,19 @@
 
 This repository contains a collection of SQL query exercises designed to help you practice and master SQL using a sample `Retail` table with the following columns:
 
+###  project data cleaning 
+
+```sql
+1.Import/Extract the Raw Data.
+2.Remove Duplicates values and Handle NULL or Missing Values.
+3.Standardize Text Data @Trim spaces, fix capitalization, and correct inconsistent spelling
+4.Drop Irrelevant Columns.
+5.Rename columns – Use clear and meaningful names for better readability.
+6.Drop irrelevant columns – Remove columns that are not useful for analysis.
+```
+
+---
+
 ### 📊 Table Structure: `Retail`
 
 ```sql
