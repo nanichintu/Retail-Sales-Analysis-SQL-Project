@@ -246,11 +246,8 @@ JOIN
 
 ```
 
-## ✅ Tools Supported
-
-- PostgreSQL   
+## ✅ Tools Supported  
 - SQL Server 
 
 ---
 
-Feel free to contribute or fork the project!
